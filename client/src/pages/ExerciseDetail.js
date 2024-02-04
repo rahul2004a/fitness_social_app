@@ -6,7 +6,7 @@ import Details from "../components/Details";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from '../components/SimilarExercises';
 import ExerciseInstruction from '../components/ExerciseInstruction';
-
+import Footer from '../components/Footer';
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
@@ -42,6 +42,7 @@ const ExerciseDetail = () => {
       <ExerciseInstruction exerciseDetail={exerciseDetail} />
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
+      <Footer />
     </Box>
   )
 }

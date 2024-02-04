@@ -18,12 +18,12 @@ const Navbar = () => (<>
     >
       <Link to="/" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #0029a3' }}>Home</Link>
       <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212' }}>Exercises</a>
-      <Link to="" style={{ textDecoration: 'none', color: '#3A1212' }}>Tasks</Link>
+      <Link to="/tasks" style={{ textDecoration: 'none', color: '#3A1212' }}>Tasks</Link>
       <Link to='' style={{ textDecoration: 'none', color: '#3A1212' }}>Posts</Link>
       <Avatar>H</Avatar>
     </Stack>
   </Stack>
-  <hr style={{ color: 'gray', border: 'none', height: '1px', width: '100%', backgroundColor: 'gray', margin: '15px 0' }} />
+  <hr style={{ color: 'gray', border: 'none', height: '1px', backgroundColor: 'gray', margin: '15px 0' }} />
 
 </>
 );

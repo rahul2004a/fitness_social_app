@@ -6,7 +6,7 @@ const ExerciseInstruction = ({ exerciseDetail }) => {
     return (
         <Box>
             <Typography sx={{ fontSize: { lg: '44px', xs: '25px' }, ml: '20px' }} fontWeight={700} color="#000" mb="33px">
-                Instruction For This Exercise</Typography>
+                Instructions</Typography>
             <ul>
                 {instructions?.map((item, id) => (
                     <li key={id}>
