@@ -1,21 +1,22 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { fetchData,exerciseOption,youtubeOption } from '../utils/fetchData';
+import { fetchData, exerciseOption, youtubeOption } from '../utils/fetchData';
 import Details from "../components/Details";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from '../components/SimilarExercises';
+import ExerciseInstruction from '../components/ExerciseInstruction';
 
 
 const ExerciseDetail = () => {
-  const [exerciseDetail,setExerciseDetail] = useState({});
+  const [exerciseDetail, setExerciseDetail] = useState({});
   const [exerciseVideos, setExerciseVideos] = useState([]);
   const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
   const [equipmentExercises, setEquipmentExercises] = useState([]);
 
-  const {id} = useParams();
-  useEffect(()=>{
-    const fetchExerciseData = async ()=>{
+  const { id } = useParams();
+  useEffect(() => {
+    const fetchExerciseData = async () => {
       const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com';
       const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
 
@@ -33,12 +34,13 @@ const ExerciseDetail = () => {
 
     }
     fetchExerciseData();
-  },[id]);
+  }, [id]);
   if (!exerciseDetail) return <div>No Data</div>;
   return (
     <Box>
-      <Details exerciseDetail={exerciseDetail}/>
-      <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name}/>
+      <Details exerciseDetail={exerciseDetail} />
+      <ExerciseInstruction exerciseDetail={exerciseDetail} />
+      <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
     </Box>
   )

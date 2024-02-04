@@ -64,7 +64,7 @@ const Exercises = ({ bodyPart, exercise, setExercises }) => {
           />
         )}
       </Stack>
-      
+
     </Box>
   )
 }
